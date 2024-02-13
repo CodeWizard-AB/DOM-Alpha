@@ -22,6 +22,8 @@
 			class="text-white bg-[url(../images/background.png)] bg-center bg-no-repeat grid place-items-center bg-black min-h-screen"
 		>
 			<div class="max-w-screen-xl m-auto text-center">
+				<!-- * HOME SECTION -->
+
 				<section class="home hidden">
 					<h2 class="text-9xl tracking-wide mb-3 font-anton">ALPHABET CLASH</h2>
 					<p class="text-lg tracking-wider font-poppin">
@@ -33,12 +35,20 @@
 						Play Now
 					</button>
 				</section>
-				<section class="playground">
-					<div class="flex flex-col gap-5">
+
+				<!-- * PLAYGROUND SECTION -->
+
+				<section class="playground hidden">
+					<div class="flex flex-col gap-12">
 						<div
 							class="artboard artboard-horizontal phone-6 bg-[#ffffffb3] border-[20px] rounded-2xl border-[#010313cc] min-h-96"
-						></div>
-						<div class="text-black text-2xl">
+						>
+							<p class="bg-[#010313cc] w-max m-auto px-5 pb-3 rounded-b-lg">
+								Don't watch keyboard while playing...
+							</p>
+							<p class="text-black text-5xl font-semibold mt-auto">Y</p>
+						</div>
+						<div class="text-black text-xl">
 							<div class="flex justify-center gap-1 my-1 w-full">
 								<kbd class="kbd">q</kbd>
 								<kbd class="kbd">w</kbd>
@@ -73,12 +83,60 @@
 								<kbd class="kbd">/</kbd>
 							</div>
 						</div>
-						<div></div>
+						<div class="flex justify-between">
+							<button
+								class="rounded-full text-white bg-[#894189] border-none px-6 py-2 flex items-center gap-1 text-lg tracking-widest"
+							>
+								Life
+								<ion-icon
+									name="heart-dislike-outline"
+									class="w-5 h-5"
+								></ion-icon>
+							</button>
+							<button
+								class="tracking-widest rounded-full bg-[#360490] border-none text-white px-6 py-2 flex items-center text-lg"
+							>
+								Score
+							</button>
+						</div>
 					</div>
 				</section>
-				<section></section>
+
+				<!-- * SCORE SECTION -->
+				<section>
+					<div
+						class="flex flex-col gap-6 justify-center items-center text-white rounded-3xl border border-[#ffffff33] p-10"
+						style="
+							background: linear-gradient(
+								136.67deg,
+								rgba(255, 255, 255, 0.56) 0%,
+								rgba(152, 151, 151, 0) 102.037%
+							);
+						"
+					>
+						<h2 class="text-7xl font-fbold tracking-wider">Score: 13</h2>
+						<button
+							class="btn text-black hover:bg-white text-2xl font-bold px-6"
+						>
+							Play Now
+						</button>
+						<p class="text-xl">Practice will make you Pro</p>
+					</div>
+				</section>
 			</div>
 		</main>
+
+		<!-- * JS REFERENCE -->
 		<script src="JS/script.js"></script>
+
+		<!-- * ICON REFERENCE -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+		></script>
 	</body>
 </html>
