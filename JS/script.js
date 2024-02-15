@@ -46,10 +46,10 @@ document.addEventListener("keyup", function (e) {
 	document.querySelectorAll(".kbd").forEach((key) => {
 		if (key.textContent === e.key) {
 			key.style.background = "orange";
-			setTimeout(() => {
-				key.style.background = "white";
-			}, 500);
 		}
+		setTimeout(() => {
+			key.style.background = "white";
+		}, 300);
 	});
 
 	if (life > 0) {
