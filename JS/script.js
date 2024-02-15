@@ -67,6 +67,7 @@ document.addEventListener("keyup", function (e) {
 			}
 		});
 	}
+
 	alphabet.textContent = generateAlphabet();
 	if (e.key === "Escape") {
 		document.querySelectorAll("section").forEach((sec) => {
