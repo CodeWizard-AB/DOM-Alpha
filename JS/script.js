@@ -47,10 +47,10 @@ document.getElementById("keyboard").addEventListener("click", function (e) {
 });
 
 document.addEventListener("keyup", function (e) {
-	if (life > 0) {
-		e.key.toUpperCase() === alphabet.textContent ? score++ : life--;
+	if (life >= 0) {
 		gameScore.textContent = score;
 		gameLife.textContent = life;
+		e.key.toUpperCase() === alphabet.textContent ? score++ : life--;
 	} else {
 		hideSection("home-screen");
 		hideSection("play-screen");
