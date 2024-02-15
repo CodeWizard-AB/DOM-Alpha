@@ -7,9 +7,15 @@ const homeScreen = document.getElementById("home-screen"),
 	gameScore = document.getElementById("score"),
 	gameLife = document.getElementById("life");
 
-let [life, score] = [Number(gameLife.textContent), 0];
+let life, score;
 
 // * FUNCTIONS -
+
+const gameStart = function () {
+	[life, score] = [5, 0];
+	gameScore.textContent = score;
+	gameLife.textContent = life;
+};
 
 const generateAlphabet = function () {
 	const alphabets = "abcdefghijklmnoqrstuvwsxyz".split("");
@@ -32,6 +38,7 @@ document.querySelectorAll(".btn").forEach((btn) => {
 		alphabet.textContent = generateAlphabet();
 		showSection("play-screen");
 		e.target.closest("section").classList.add("hidden");
+		gameStart();
 	});
 });
 
@@ -50,6 +57,7 @@ document.addEventListener("keyup", function (e) {
 		gameScore.textContent = score;
 		gameLife.textContent = life;
 	} else {
+		gameStart();
 		document.getElementById("gameScore").textContent = score;
 		document.querySelectorAll("section").forEach((section) => {
 			if (section.getAttribute("id") === "score-screen") {
