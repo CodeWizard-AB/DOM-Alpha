@@ -57,8 +57,8 @@ document.addEventListener("keyup", function (e) {
 		gameScore.textContent = score;
 		gameLife.textContent = life;
 	} else {
-		gameStart();
 		document.getElementById("gameScore").textContent = score;
+		gameStart();
 		document.querySelectorAll("section").forEach((section) => {
 			if (section.getAttribute("id") === "score-screen") {
 				section.classList.remove("hidden");
