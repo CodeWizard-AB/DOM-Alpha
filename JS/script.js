@@ -11,50 +11,44 @@ let [life, score] = [Number(gameLife.textContent), 0];
 
 // * FUNCTIONS -
 
-const showSection = function (section) {
-	document.getElementById(section).classList.remove("hidden");
-};
-
-const hideSection = function (section) {
-	document.getElementById(section).classList.add("hidden");
-};
-
 const generateAlphabet = function () {
 	const alphabets = "abcdefghijklmnoqrstuvwsxyz".split("");
 	const randomInt = Math.floor(Math.random() * 26);
 	return alphabets[randomInt].toUpperCase();
 };
 
-setInterval(() => {
-	alphabet.textContent = generateAlphabet();
-}, 2000);
-
 // * EVENT HANDLERS -
 
 document.querySelectorAll(".btn").forEach((btn) => {
 	btn.addEventListener("click", function (e) {
-		showSection("play-screen");
+		document.getElementById("play-screen").classList.remove("hidden");
 		e.target.closest("section").classList.add("hidden");
 	});
 });
 
-document.getElementById("keyboard").addEventListener("click", function (e) {
-	const clicked = e.target;
-	document.querySelectorAll(".kbd").forEach((key) => {
-		key.style.background = "white";
-	});
-	if (clicked.classList.contains("kbd")) clicked.style.background = "#FFA500";
-});
-
 document.addEventListener("keyup", function (e) {
-	if (life >= 0) {
+	document.querySelectorAll(".kbd").forEach((key) => {
+		if (key.textContent === e.key) {
+			key.style.background = "orange";
+			setTimeout(() => {
+				key.style.background = "white";
+			}, 500);
+		}
+	});
+
+	alphabet.textContent = generateAlphabet();
+	if (life > 0) {
+		e.key.toUpperCase() === alphabet.textContent ? score++ : life--;
 		gameScore.textContent = score;
 		gameLife.textContent = life;
-		e.key.toUpperCase() === alphabet.textContent ? score++ : life--;
 	} else {
-		hideSection("home-screen");
-		hideSection("play-screen");
-		showSection("score-screen");
+		document.querySelectorAll("section").forEach((section) => {
+			if (section.getAttribute("id") === "score-screen") {
+				section.classList.remove("hidden");
+			} else {
+				section.classList.add("hidden");
+			}
+		});
 		document.getElementById("gameScore").textContent = score;
 	}
 });
