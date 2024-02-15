@@ -35,10 +35,10 @@ const hideSection = function (section) {
 
 document.querySelectorAll(".btn").forEach((btn) => {
 	btn.addEventListener("click", function (e) {
-		alphabet.textContent = generateAlphabet();
-		showSection("play-screen");
-		e.target.closest("section").classList.add("hidden");
 		gameStart();
+		showSection("play-screen");
+		alphabet.textContent = generateAlphabet();
+		hideSection(e.target.closest("section").getAttribute("id"));
 	});
 });
 
